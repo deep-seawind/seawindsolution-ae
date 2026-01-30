@@ -12,9 +12,7 @@ import MobileHeaderLink from './Navigation/mobileheaderLinks';
 const Header: React.FC = () => {
     const [sticky, setSticky] = useState(false);
     const [isOpenSidebar, setIsOpenSidebar] = useState(false);
-    const [navbarOpen, setNavbarOpen] = useState(false);
-    const [isLangOpen, setIsLangOpen] = useState(false);
-    const [selectedLang, setSelectedLang] = useState('EN');
+    const [navbarOpen, setNavbarOpen] = useState(false); 
 
 
     const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -28,15 +26,7 @@ const Header: React.FC = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (langDropdownRef.current && !langDropdownRef.current.contains(event.target as Node)) {
-                setIsLangOpen(false);
-            }
-        };
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, []);
+   
     return (
         <>
             <header
