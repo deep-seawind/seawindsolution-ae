@@ -1,0 +1,400 @@
+ // INDEX PAGE ================================
+  // Components ================================
+
+// Solution Components
+
+  Our Solution
+  Tailor-Made Business Solutions for Modern Corporates
+
+  // Solution data
+  export const solutionData = [
+    {
+        title: "Training & Development",
+        icon: "mdi:school",
+        description: "Equip your teams with skills and knowledge tailored to your corporate goals.",
+    },
+    {
+        title: "Business Strategy",
+        icon: "mdi:briefcase-outline",
+        description: "Develop actionable strategies to drive growth and stay ahead in your industry.",
+    },
+    {
+        title: "Sustainability & ESG",
+        icon: "mdi:leaf",
+        description: "Implement strategies for long-term value, sustainability, and corporate responsibility.",
+    },
+    {
+        title: "Customer Engagement",
+        icon: "mdi:account-group-outline",
+        description: "Enhance customer journeys to boost satisfaction, loyalty, and long-term retention.",
+    },
+    {
+        title: "Training & Development",
+        icon: "mdi:school",
+        description: "Equip your teams with skills and knowledge tailored to your corporate goals.",
+    },
+];
+
+ // Companies Components
+
+ Our Partners
+ Join Over 1000+ Companies with Bexon Here
+
+ Companies data
+ 
+export const companies = [
+    {
+        image: "/images/companies/brand-1.webp"
+    },
+    {
+        image: "/images/companies/brand-2.webp"
+    },
+    {
+        image: "/images/companies/brand-3.webp"
+    },
+    {
+        image: "/images/companies/brand-4.webp"
+    },
+    {
+        image: "/images/companies/brand-5.webp"
+    },
+    {
+        image: "/images/companies/brand-2.webp"
+    },
+    {
+        image: "/images/companies/brand-4.webp"
+    },
+]
+
+
+// Commitment Components
+
+Choose the Best
+
+Committed Delivering Measurable Results and Building from the Lasting Relationships through out trust and innovation and corporate shared
+
+Rebranding Strategy for a Growing
+
+
+// Process Components
+
+Our Process 
+Seamless Process, Great Results.
+
+Developing personalized customer journeys to increase satisfaction and loyalty.
+
+01
+Discovery & Planning
+
+The first step in our process is understanding your unique business needs, objectives, and our cutomes challenges.
+
+02
+Execution & Delivery
+
+Once the plan is in place, our team moves forward with execution, turning strategies into actiony to deliver
+
+03
+Review & Support
+
+After project completion, we conduct a thorough review to ensure everything aligns with your goals and requirements
+
+
+// Projects Components
+
+Our Projects
+Breaking Boundaries, Building Dreams.
+
+// Projects data
+export const projects = [
+    {
+        category: "Innovation",
+        title: "AI-Powered Analytics Suite",
+        description: "Transform raw data into meaningful insights with predictive AI dashboards that help businesses make faster and smarter decisions.",
+        image: "/images/projects/project-01.jpg",
+        link: "/about",
+    },
+    {
+        category: "Collaboration",
+        title: "Remote Team Workspace",
+        description: "A modern digital hub that connects remote teams, enabling real-time communication, seamless file sharing, and productive workflows.",
+        image: "/images/projects/project-02.jpg",
+        link: "/about",
+    },
+    {
+        category: "Growth",
+        title: "E-Commerce Acceleration Platform",
+        description: "Boost online sales with optimized storefronts, automated marketing campaigns, and customer engagement tools built for scale.",
+        image: "/images/projects/project-03.jpg",
+        link: "/about",
+    },
+    {
+        category: "Strategy",
+        title: "Smart Event Management System",
+        description: "Plan, manage, and analyze events effortlessly with AI-driven tools for scheduling, attendee engagement, and real-time insights.",
+        image: "/images/projects/project-04.jpg",
+        link: "/about",
+    },
+];
+
+
+// Testimonials Components
+
+
+// testimonial data
+export const testimonial = [
+    {
+        id: 1,
+        text: "Working with Bexon has been a game-changer for our business. Their team’s professionalism, attention to detail, and innovative solutions have helped us streamline operations and achieve our goals faster than we imagined. We truly feel like a valued partner.",
+        name: "Ralph Edwards",
+        position: "Co. Founder",
+        image: "/images/testimonials/user.jpg"
+    },
+    {
+        id: 2,
+        text: "The results we’ve seen after partnering with Bexon are beyond our expectations. They not only understood our vision but also brought new ideas to the table that have taken our business to the next level. Their expertise and commitment to success make them a trusted partner.",
+        name: "Guy Hawkins",
+        position: "Co. Founder",
+        image: "/images/testimonials/user2.jpg"
+    },
+    {
+        id: 3,
+        text: "We’ve been working with Bexon for years, and they continue to deliver outstanding results. Their team is proactive, responsive, and always goes the extra mile to ensure our needs are met. They’ve become a key contributor to our growth and success.",
+        name: "Devon Lane",
+        position: "Co. Founder",
+        image: "/images/testimonials/user3.jpg"
+    }
+]
+
+// Pricing Components
+
+FLEXIBLE PRICING
+Our Pricing Plan
+
+// Blog Components
+
+Our Blogs
+Strategies and Insights.
+
+// blog data
+
+// blogs
+
+export const blogs = [
+    {
+        id: 1,
+        slug: "harnessing-digital-transform",
+        title: "Harnessing Digital Transform: A Roadmap for Businesses",
+        category: "Business",
+        author: "Ellinien Loma",
+        date: "18 Jun",
+        image: "/images/blog/blog-1.jpg",
+        description: "Discover how to leverage digital transformation to boost efficiency and growth."
+    },
+    {
+        id: 2,
+        slug: "mastering-change-management",
+        title: "Mastering Change Management: Lessons for Businesses",
+        category: "Corporate",
+        author: "Ellinien Loma",
+        date: "14 Jun",
+        image: "/images/blog/blog-2.jpg",
+        description: "Learn proven change management strategies for adapting to evolving business challenges."
+    },
+    {
+        id: 3,
+        slug: "entrepreneur-mindset-success",
+        title: "Entrepreneur Mindset: Habits That Drive Success",
+        category: "Innovation",
+        author: "Ellinien Loma",
+        date: "01 Oct, 2025",
+        image: "/images/blog/blog-3.jpg",
+        description: "Explore the key habits and strategies that shape a successful entrepreneur mindset."
+    },
+];
+
+// Footer 
+
+// Footer Links
+export const footerLinks: { link: string }[] = [
+    {
+        link: "Customer Experience",
+    },
+    {
+        link: "Training Programs",
+    },
+    {
+        link: "Business Strategy",
+    },
+    {
+        link: "Training Program",
+    },
+    {
+        link: "ESG Consulting",
+    },
+    {
+        link: "Development Hub",
+    },
+    {
+        link: "Contact us",
+    },
+    {
+        link: "Team Member",
+    },
+    {
+        link: "Recognitions",
+    },
+    {
+        link: "Careers",
+    },
+    {
+        link: "News",
+    },
+    {
+        link: "Feedback",
+    },
+    {
+        link: "Privacy",
+    },
+    {
+        link: "Security",
+    },
+    {
+        link: "Disclaimer",
+    },
+];
+
+
+// ABOUT PAGE =======================================================================================
+
+Choose the Best
+Empowering Business with Expertise.
+
+Get to Know Us
+Driving Innovation and Excellence for Sustainable Corporate Success Worldwide.
+
+
+// TEAM PAGE
+ =======================================================================================
+
+ Meet Our Team
+Meet Our Team Success Stories Fuel our Innovation.
+
+// FAQ PAGE
+ =======================================================================================
+
+const faqData: FAQItem[] = [
+    {
+        question: "What services does Bexon offer to clients?",
+        answer:
+            "Getting started is easy! Simply reach out to us through our contact form or give us a call, and we’ll schedule a consultation to discuss your project and how we can best assist you. Our team keeps you informed throughout the process, ensuring quality control and timely delivery.",
+    },
+    {
+        question: "How do I get started with Corporate Business?",
+        answer:
+            "Getting started is easy! Simply reach out to us through our contact form or give us a call, and we’ll schedule a consultation to discuss your project and how we can best assist you. Our team keeps you informed throughout the process, ensuring quality control and timely delivery.",
+    },
+    {
+        question: "How do you ensure the success of a project?",
+        answer:
+            "Getting started is easy! Simply reach out to us through our contact form or give us a call, and we’ll schedule a consultation to discuss your project and how we can best assist you. Our team keeps you informed throughout the process, ensuring quality control and timely delivery.",
+    },
+    {
+        question: "How long will it take to complete my project?",
+        answer:
+            "Getting started is easy! Simply reach out to us through our contact form or give us a call, and we’ll schedule a consultation to discuss your project and how we can best assist you. Our team keeps you informed throughout the process, ensuring quality control and timely delivery.",
+    },
+    {
+        question: "Can I track the progress of my project?",
+        answer:
+            "Getting started is easy! Simply reach out to us through our contact form or give us a call, and we’ll schedule a consultation to discuss your project and how we can best assist you. Our team keeps you informed throughout the process, ensuring quality control and timely delivery.",
+    },
+];
+
+
+// CONTACT PAGE
+ =======================================================================================
+
+ Feel Free to Get in Touch or Visit our Location.
+
+
+ // Service Details ================================================
+
+{
+        question: "What is Customer Experience (CX) and why is it important?",
+        answer:
+            "Customer Experience (CX) refers to the overall impression a customer has of a business based on their interactions across various touchpoints—whether it’s a website visit, a customer support call, or an in-store purchase. It encompasses everything from ease of navigation and service quality to emotional connection and brand perception.",
+    },
+    {
+        question: "How can your Customer Experience Solutions benefit?",
+        answer:
+            "Our CX solutions help streamline processes, increase customer satisfaction, and build long-term loyalty through personalized experiences.",
+    },
+    {
+        question: "How do you personalize the customer experience?",
+        answer:
+            "We collect customer data and insights to tailor interactions, offers, and support to each individual’s preferences and behavior.",
+    },
+    {
+        question: "How do you collect customer feedback?",
+        answer:
+            "We use surveys, feedback forms, analytics tools, and direct interactions to gather valuable insights from your customers.",
+    },
+    {
+        question: "Can you help improve our customer support system?",
+        answer:
+            "Yes! We analyze your current support channels and implement solutions to optimize efficiency, response time, and overall satisfaction.",
+    },
+
+p-1 Recognize that exceptional customer experiences are at the heart of every successful business. Our Customer Experience Solutions are crafted to help you transform every interaction your customers have with your brand into a meaningful and positive experience. We believe that understanding the customer journey and providing personalized, seamless experiences can significantly enhance customer loyalty, satisfaction, and lifetime value. Our approach to customer experience is comprehensive and data-driven.
+
+p-2 Our approach to customer experience is comprehensive and data-driven. We begin by assessing your current customer touchpoints, identifying areas for improvement, and using insights to develop strategies that meet your customers’ evolving needs. From optimizing digital platforms.
+
+p-3  At Bexon, we don't just focus on solving customer problems—we focus on creating experiences that delight and build lasting relationships. Whether it's through improving customer service operations, leveraging technology, or designing more engaging digital experiences, our team is here to help you exceed your customers' expectations every time. We help you understand your customers deeply, optimize their experience.
+
+// Protfolio Details ===========================
+
+ { label: "Clients", value: "Innovate Interiors Group" },
+ { label: "Budget", value: "$100M USD" },
+ { label: "Location", value: "Maplewood Heights, CA" },
+ { label: "Sector", value: "Corporate Business" },
+ { label: "Complete date", value: "Jul 20, 2025" },
+
+
+p-1 This project highlights our expertise in creating visually appealing, high-performing, and user-friendly solutions. From concept to completion, we focused on achieving excellence through strategy, creativity, and technology.
+
+p-2 In today’s dynamic market, a strong and consistent brand identity is key to standing out and driving growth and a growing business in the Bexon, recognized the need to evolve its brand to better resonate with an expanding audience and adapt to shifting market trends.
+
+p-3 Our Rebranding Strategy for transformed their entire brand identity, from a fresh new logo to an updated visual design that resonates with their growing audience.
+
+// Blog & Blog Details ===============================
+
+    {
+        image: blog1,
+        title: "Entrepreneur Mindset: Habits That Drive Success",
+        date: "01 Oct, 2025",
+    },
+    {
+        image: blog2,
+        title: "Innovative Strategies for Business Growth",
+        date: "15 Oct, 2025",
+    },
+    {
+        image: blog3,
+        title: "Leadership Lessons for Modern Entrepreneurs",
+        date: "22 Oct, 2025",
+    },
+
+p-1 In today’s competitive landscape, businesses must continuously adapt and innovate to thrive. Unlocking Business Potential means identifying untapped opportunities and leveraging innovative solutions to drive growth, enhance efficiency, and foster lasting success. At Bexon, we believe that success is not just about working harder—it’s about working smarter. By harnessing cutting-edge technologies, data-driven insights, and creative problem-solving, we provide businesses with the tools and strategies needed to stay ahead.
+
+p-2 The curve. Whether you’re looking to streamline operations, enhance customer experiences, or explore new market opportunities, our tailored solutions are designed to empower your business to achieve unparalleled success. With a focus on sustainability, scalability, and adaptability, we help your business.
+
+p-3 The true entrepreneur is a doer, not a dreamer. Innovation is the catalyst that transforms ideas into reality. In today’s fast-paced world, success depends not on just surviving change.
+
+p-4  Unlocking your business potential requires more than just vision and ambition—it involves strategic thinking, adaptability, and an unwavering commitment to growth. Over time, successful businesses have learned essential lessons that allow them to not only survive but thrive in an ever-changing marketplace. One of the most important lessons is understanding the need for continuous innovation.
+
+p-5 Lastly, effective leadership that inspires and motivates employees, customers, and stakeholders is essential in steering the business toward achieving its full potential. By applying these lessons, businesses can unlock new opportunities, overcome obstacles, and reach new levels of success.
+
+p-6 Your email address will not be published. Required fields are marked *
+
+p-7 Save my name, email, and website in this browser for the next time I comment.
+
