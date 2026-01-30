@@ -61,7 +61,7 @@ export default function AiWhyChoose() {
           Why choose us
         </span>
         <h2 className="mt-4 font-chakrapetch lg:text-35 text-xl md:text-3xl font-semibold">
-          Here's why you should choose us:
+          Here&apos;s why you should choose us:
         </h2>
       </div>
 

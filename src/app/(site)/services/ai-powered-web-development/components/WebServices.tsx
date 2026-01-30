@@ -2,14 +2,14 @@
 
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination } from "swiper/modules";
-import { FaStar } from "react-icons/fa";
+import { EffectCoverflow, Pagination } from "swiper/modules"; 
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import Container from "@/components/common/Container";
+import Image from "next/image";
 
 // Sample Data to match your image
 const movies = [
@@ -108,7 +108,7 @@ export default function WebServices() {
                   className={`relative w-full h-full bg-neutral-900 rounded-3xl overflow-hidden group`}
                 >
                   {/* Background Image */}
-                  <img
+                  <Image
                     src={movie.img}
                     alt={movie.title}
                     className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"

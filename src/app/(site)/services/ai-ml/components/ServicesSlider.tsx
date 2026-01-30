@@ -2,6 +2,7 @@
 "use client";
 
 import Container from "@/components/common/Container";
+import Image from "next/image";
 import React, { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
@@ -128,30 +129,35 @@ export default function ServicesSlider() {
                 transform: `translateX(-${currentIndex * (cardWidth * cardsPerView)}px)`,
               }}
             >
-              {businessData.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex-shrink-0 w-[340px] rounded-2xl overflow-hidden shadow-lg group cursor-pointer hover:-translate-y-2 transition-transform duration-300"
-                >
-                  <div className="h-48 overflow-hidden relative">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
-                  </div>
+          {businessData.map((item) => (
+            <div
+              key={item.id}
+              className="flex-shrink-0 w-[340px] rounded-2xl overflow-hidden shadow-lg 
+              group cursor-pointer hover:-translate-y-2 transition-transform duration-300"
+            >
+              {/* Image */}
+              <div className="h-48 overflow-hidden relative">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  sizes="340px"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+              </div>
 
-                  <div className="p-8 bg-white h-40 flex flex-col justify-center">
-                    <h3 className="text-base font-bold text-gray-900 mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {item.des}
-                    </p>
-                  </div>
-                </div>
-              ))}
+              {/* Content */}
+              <div className="p-8 bg-white h-40 flex flex-col justify-center">
+                <h3 className="text-base font-bold text-gray-900 mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {item.des}
+                </p>
+              </div>
+            </div>
+          ))}
             </div>
           </div>
         </div>

@@ -80,7 +80,7 @@ const AiLmsWhyChooseUs = () => {
 
             <div className="relative w-full max-w-md mt-auto">
               <div className="relative h-[300px] w-full rounded-3xl overflow-hidden shadow-lg">
-                <img 
+                <Image 
                   src="/images/services/user-image.avif" 
                   alt="Business owner thinking"
                   className="w-full h-full object-cover"

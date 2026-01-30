@@ -1,20 +1,11 @@
 import React from "react";
-import HeroSub from "@/components/common/SharedComponents/HeroSub";
-import AiMlAbout from "./components/AiLmsAbout";
-import FinanceSection from "./components/AiLmsFinanceSection";
-import ServicesSlider from "./components/AiLmsServicesSlider";
-import WhyChooseUs from "./components/AiLmsWhyChooseUs";
-import Process from "./components/AiLmsProcess";
+import HeroSub from "@/components/common/SharedComponents/HeroSub"; 
 import Faq from "../../about/faq/page";
-import { Pricing } from "@/components";
-import AiMlsFinanceSection from "./components/AiLmsFinanceSection";
-import AiMlsServicesSlider from "./components/AiLmsServicesSlider";
-import AiMlsWhyChooseUs from "./components/AiLmsWhyChooseUs";
+import { Pricing } from "@/components"; 
 import AiLmsAbout from "./components/AiLmsAbout";
 import AiLmsFinanceSection from "./components/AiLmsFinanceSection";
 import AiLmsServicesSlider from "./components/AiLmsServicesSlider";
-import AiLmsProcess from "./components/AiLmsProcess";
-import AiLmsWhyChooseUs from "./components/AiLmsWhyChooseUs";
+import AiLmsProcess from "./components/AiLmsProcess"; 
 import AiLmsWhoCanUse from "./components/AiLmsWhoCanUse";
 
 const AiLms = () => {

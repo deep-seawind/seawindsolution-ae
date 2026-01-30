@@ -1,7 +1,5 @@
 "use client";
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React from "react"; 
 import HeroSub from "@/components/common/SharedComponents/HeroSub";
 import { Icon } from "@iconify/react";
 import Container from "@/components/common/Container";
@@ -138,7 +136,7 @@ const Page = () => {
                   <div className="flex items-start gap-3 mt-5">
                     <input type="checkbox" id="agreement" className="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded" required />
                     <label htmlFor="agreement" className="text-gray-700 text-sm cursor-pointer">
-                      I agree that by clicking on "Submit", I am explicitly soliciting a call, message & mail from Seawind Solution FZ-LLC or its associates.
+                      I agree that by clicking on &quot;Submit&quot;, I am explicitly soliciting a call, message &amp; mail from Seawind Solution FZ-LLC or its associates.
                     </label>
                   </div>
                 </div>

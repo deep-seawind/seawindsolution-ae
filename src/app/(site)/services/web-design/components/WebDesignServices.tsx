@@ -1,15 +1,12 @@
 "use client";
-import React from "react";
-
-
+import React from "react"; 
 import {
   Home,
   Code,
-  Megaphone,
-
-  ArrowRight,
+  Megaphone, 
 } from "lucide-react";
 import Container from "@/components/common/Container";
+import Image from "next/image";
 
 
 const WebDesignServices = () => {
@@ -96,7 +93,7 @@ const WebDesignServices = () => {
               ></div>
 
               <div className="relative h-48 w-full">
-                <img
+                <Image
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover"

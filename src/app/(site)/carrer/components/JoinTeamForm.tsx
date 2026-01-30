@@ -13,7 +13,7 @@ export default function JoinTeamForm() {
             Join The Team
           </span>
           <h2 className="w-full mt-4 font-chakrapetch text-2xl md:text-3xl lg:text-[35px] capitalize font-semibold leading-snug md:w-4/5">
-            Join our dynamic team to embark on a journey of exponential growth. Simply complete the form, and we'll be sure to reach out to you promptly.
+            Join our dynamic team to embark on a journey of exponential growth. Simply complete the form, and we&apos;ll be sure to reach out to you promptly.
           </h2>
         </div>
 
@@ -25,7 +25,7 @@ export default function JoinTeamForm() {
             <div>
               <h2 className="text-xl md:text-2xl font-bold mb-4">Contact Information</h2>
               <p className="text-teal-100 text-sm mb-10 md:mb-12">
-                We'll create high-quality linkable content and build at least 40 high-authority.
+                We&apos;ll create high-quality linkable content and build at least 40 high-authority.
               </p>
 
               <div className="space-y-6 md:space-y-8">

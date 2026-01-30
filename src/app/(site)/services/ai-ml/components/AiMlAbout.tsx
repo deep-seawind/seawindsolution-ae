@@ -18,10 +18,10 @@ const AiMlAbout = () => {
         </h1>
 
         <p className="text-gray-700 mb-0 leading-relaxed text-[17px]">
-          In today's digital economy, Artificial Intelligence (AI) and Machine
-          Learning (ML) are no longer optional; they're essential. From
+          In today&apos;s digital economy, Artificial Intelligence (AI) and Machine
+          Learning (ML) are no longer optional; they&apos;re essential. From
           automation to intelligent data analysis, AI/ML technologies are
-          driving transformation across industries. Whether you're a startup in
+          driving transformation across industries. Whether you&apos;re a startup in
           Dubai, an enterprise in Abu Dhabi, or a government agency in Sharjah,
           we deliver cutting-edge AI/ML development services tailored to your
           needs.
@@ -41,7 +41,7 @@ const AiMlAbout = () => {
         <p className="text-gray-700 leading-relaxed text-[17px]">
           We bring deep expertise in AI/ML strategy, model development,
           deployment, and maintenance. Whether you need a computer vision app, a
-          recommendation engine, or predictive analytics tools, we've got you
+          recommendation engine, or predictive analytics tools, we&apos;ve got you
           covered. Our agile development process ensures rapid delivery with
           full transparency.
         </p>

@@ -1,4 +1,5 @@
 import Container from "@/components/common/Container";
+import Image from "next/image";
 import React from "react";
 
 const Industrial = () => {
@@ -37,21 +38,27 @@ const Industrial = () => {
         </h2>
       </div>
         <div className="flex flex-wrap justify-center gap-6 mt-8">
-          {items.map((item, index) => (
+        {items.map((item, index) => (
             <div
               key={index}
-              className="text-center border-2 border-[#9fe1ff] rounded-lg p-5 w-[180px] hover:scale-105 transition-transform"
+              className="text-center border-2 border-[#9fe1ff] rounded-lg p-5 w-[180px] 
+              hover:scale-105 transition-transform"
             >
-              <figure>
-                <img
+              {/* Image wrapper */}
+              <figure className="relative w-full h-20">
+                <Image
                   src={item.img}
                   alt={item.title}
-                  className="h-20 w-auto mx-auto"
+                  fill
+                  className="object-contain"
+                  sizes="180px"
                 />
               </figure>
+
               <h4 className="mt-2 text-lg font-medium">{item.title}</h4>
             </div>
           ))}
+
         </div>
       </Container>
     </section>

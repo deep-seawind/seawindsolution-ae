@@ -1,4 +1,5 @@
 import Container from "@/components/common/Container";
+import Image from "next/image";
 import {
   FaShieldAlt,
   FaUserClock,
@@ -98,15 +99,19 @@ export default function FinanceSection() {
             <ItemCard key={i} {...item} />
           ))}
         </div>
-
+ 
         {/* Center Image */}
         <div className="flex-1 text-center">
-          <img
+          <Image
             src="/images/services/service-img.png"
             alt="Mobile App Screenshot"
-            className="max-w-full h-auto rounded-[40px]"
+            width={500}
+            height={700}
+            className="max-w-full h-auto rounded-[40px] mx-auto"
+            priority
           />
         </div>
+
 
         {/* Right Column */}
         <div className="flex flex-col justify-center gap-16 flex-1">

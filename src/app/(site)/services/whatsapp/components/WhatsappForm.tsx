@@ -1,4 +1,5 @@
 import Container from "@/components/common/Container";
+import Image from "next/image";
 import React from "react";
 
 import { MdRefresh } from "react-icons/md";
@@ -111,7 +112,7 @@ const WhatsappForm = () => {
               <div className="flex items-center gap-3">
                 <div className="w-6 h-6 border-2 border-gray-400 rounded-sm bg-white cursor-pointer hover:border-gray-500"></div>
                 <span className="text-sm text-gray-700 font-medium">
-                  I'm not a robot
+                  I&apos;m not a robot
                 </span>
               </div>
               <div className="flex flex-col items-center justify-center text-[10px] text-gray-500">
@@ -134,16 +135,17 @@ const WhatsappForm = () => {
         </div>
       </Container>
     </div>
-
-   
-
-    <div className="w-full  mb-10 flex justify-center">
-  <img
-    src="/images/services/whatsappBusiness.jpg"
-    alt="WhatsApp Business"
-    className="w-full  object-cover rounded-xl shadow-md"
-  />
-</div>
+ 
+        <div className="w-full mb-10 flex justify-center">
+          <Image
+            src="/images/services/whatsappBusiness.jpg"
+            alt="WhatsApp Business"
+            width={1200}
+            height={500}
+            className="w-full object-cover rounded-xl shadow-md"
+            sizes="(max-width: 768px) 100vw, 1200px"
+          />
+        </div>
     
     </>
   );

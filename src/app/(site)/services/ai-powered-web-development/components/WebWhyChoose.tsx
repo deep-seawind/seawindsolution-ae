@@ -19,7 +19,7 @@ const WebWhyChoose: React.FC = () => {
     {
       id: 3,
       title: "End-to-End Support:",
-      desc: "From consultation to post-launch support, we’ve got you covered..",
+      desc: "From consultation to post-launch support, we&apos;ve got you covered..",
     },
     {
       id: 4,
@@ -50,11 +50,11 @@ const WebWhyChoose: React.FC = () => {
             </h2>
 
             <p className="text-sm sm:text-base md:text-16 text-pera-dark mb-5 sm:mb-6 leading-relaxed tracking-wide">
-              At Seawind Solution, we blend technical expertise with strategic thinking to deliver AI-enhanced digital experiences. We’re not just developers, we're your digital growth partners.
+              At Seawind Solution, we blend technical expertise with strategic thinking to deliver AI-enhanced digital experiences. We&apos;re not just developers, we&apos;re your digital growth partners.
             </p>
 
             <p className="text-sm sm:text-base md:text-16 text-pera-dark mb-6 sm:mb-8 leading-relaxed tracking-wide">
-              With a proven track record and a highly skilled team, we ensure your project is handled with precision at every stage. Whether you're launching a new blockchain platform or integrating distributed ledger technology into your existing systems, we offer comprehensive support from start to finish.
+              With a proven track record and a highly skilled team, we ensure your project is handled with precision at every stage. Whether you&apos;re launching a new blockchain platform or integrating distributed ledger technology into your existing systems, we offer comprehensive support from start to finish.
             </p>
 
             {/* Button */}

@@ -1,5 +1,6 @@
 import Container from '@/components/common/Container';
 import { Icon } from '@iconify/react';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -9,11 +10,11 @@ const Hero: React.FC = () => {
             <div className='hero h-screen w-full bg-midnight_text relative overflow-hidden pt-44 pb-20'>
                 <div className="hero-image bg-[url(/images/hero/hero-banner.jpg)] absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat"></div>
                 <div className="shape-1 absolute z-30 top-0 left-0 w-[300px] h-1/2 flex justify-start items-start">
-                    <img src="/images/hero/pattern-2.svg" alt="element-image" />
+                    <Image src="/images/hero/pattern-2.svg" alt="element-image" />
                 </div>
 
                 <div className="shape-2 absolute z-30 right-0 bottom-0 w-[300px] h-auto flex justify-center items-center">
-                    <img src="/images/hero/pattern-3.svg" alt="element-image" />
+                    <Image src="/images/hero/pattern-3.svg" alt="element-image" />
                 </div>
 
                 <Container className=' z-20 relative text-white px-4 h-full flex flex-col justify-center items-start'>

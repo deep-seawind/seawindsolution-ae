@@ -53,7 +53,7 @@ const HomeContact = () => {
                   <div className="bg-white/20 p-3 rounded-xl">
                     <FiPhone className="text-xl" />
                   </div>
-                  <p className="text-3xl font-semibold">Let's get in touch</p>
+                  <p className="text-3xl font-semibold">Let&apos;s get in touch</p>
                 </div>
 
                 <p>Discover Seawind solutions FZ-LLC</p>

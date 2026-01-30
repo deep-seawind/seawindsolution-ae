@@ -73,13 +73,15 @@ const WhyChooseUs = () => {
             </div>
 
             <div className="relative w-full max-w-md mt-auto">
-              <div className="relative h-[300px] w-full rounded-3xl overflow-hidden shadow-lg">
-                <img 
-                  src="/images/services/user-image.avif" 
-                  alt="Business owner thinking"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+             <div className="relative h-[300px] w-full rounded-3xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/services/user-image.avif"
+                alt="Business owner thinking"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
 
               <div className="absolute -top-6 right-10 bg-[#4F65E1] p-3 rounded-full border-4 border-white shadow-lg">
                 <BarChart3 className="text-white w-6 h-6" />

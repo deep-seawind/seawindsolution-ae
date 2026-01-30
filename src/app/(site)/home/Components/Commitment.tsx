@@ -6,15 +6,7 @@ import { Icon } from "@iconify/react";
 import Container from "@/components/common/Container";
 
 const Commitment: React.FC = () => {
-  const tags = [
-    "Growth",
-    "Success",
-    "Innovate",
-    "Lead",
-    "Impact",
-    "Focus",
-    "Tech",
-  ];
+ 
   return (
     <>
       <section className="bg-light overflow-hidden py-14 lg:py-18 xl:py-10 bg-prim-light">

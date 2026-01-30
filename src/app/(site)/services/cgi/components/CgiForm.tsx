@@ -21,16 +21,16 @@ const CgiForm = () => {
 
             <p className="mt-6 text-gray-600 text-sm md:text-base text-start leading-relaxed">
               At Seawind Solution FZ-LLC, we create jaw-dropping CGI videos that
-              turn ordinary visuals into extraordinary experiences. Whether it's
+              turn ordinary visuals into extraordinary experiences. Whether it&apos;s
               for real estate, product marketing, gaming, or advertising, our
               CGI solutions are designed to captivate, inspire, and deliver
               results.
             </p>
 
             <p className="mt-6 text-gray-600 text-sm md:text-base text-start  leading-relaxed">
-              Whether you’re looking to add stunning visual effects to your
+              Whether you&apos;re looking to add stunning visual effects to your
               project or elevate your brand with eye-catching 3D animations,
-              we’re here to help. As a trusted animation company in Dubai, we
+              we&apos;re here to help. As a trusted animation company in Dubai, we
               pride ourselves on our attention to detail and commitment to
               exceeding your expectations every step of the way.
             </p>

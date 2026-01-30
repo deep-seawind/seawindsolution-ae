@@ -80,9 +80,9 @@ const CgiWhyChoose = () => {
           <p className="mt-6 text-gray-600 text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
             Your success is our priority. provides CGI services in Dubai, that
             not only look incredible but also help drive your business goals.
-            Our visuals are crafted to capture your audience's attention and
+            Our visuals are crafted to capture your audience&apos;s attention and
             leave a lasting impression. From numerous CGI service providers in
-            Dubai, here's what sets us apart, and why you should work with us:
+            Dubai, here&apos;s what sets us apart, and why you should work with us:
           </p>
         </div>
 

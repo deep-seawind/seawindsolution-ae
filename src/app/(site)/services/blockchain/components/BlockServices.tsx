@@ -76,7 +76,7 @@ const BlockServices = () => {
             <p className="mt-6 text-gray-600 text-sm md:text-base">
               At Seawind Solution, we specialize in delivering comprehensive blockchain
               development services designed to meet the diverse needs of modern businesses.
-              Whether you're a startup exploring blockchain for the first time or an
+              Whether you&apos;re a startup exploring blockchain for the first time or an
               enterprise aiming to streamline operations with decentralized technology,
               our end-to-end solutions are tailored to your goals.
             </p>

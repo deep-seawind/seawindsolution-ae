@@ -8,8 +8,7 @@ import { Icon } from "@iconify/react";
 import { protfolio } from "@/app/api/data";
 import protfolio1 from "@/../public/images/protfoliodetails/project-gallery-1.webp";
 import protfolio2 from "@/../public/images/protfoliodetails/project-gallery-2.webp";
-import protfolio3 from "@/../public/images/protfoliodetails/project-gallery-3.webp";
-import Link from "next/link";
+import protfolio3 from "@/../public/images/protfoliodetails/project-gallery-3.webp"; 
 import Container from "@/components/common/Container";
 
 type Props = {

@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-import Image from "next/image";
+import React from "react"; 
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import Container from "@/components/common/Container";
@@ -59,7 +58,7 @@ const ChainWhyChoose: React.FC = () => {
             <p className="text-sm sm:text-base md:text-16 text-pera-dark mb-6 sm:mb-8 leading-relaxed tracking-wide">
               With a proven track record and a highly skilled team, we ensure
               your project is handled with precision at every stage. Whether
-              you're launching a new blockchain platform or integrating
+              you&apos;re launching a new blockchain platform or integrating
               distributed ledger technology into your existing systems, we offer
               comprehensive support from start to finish.
             </p>

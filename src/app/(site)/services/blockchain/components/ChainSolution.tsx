@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"; 
 import Container from "@/components/common/Container";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";

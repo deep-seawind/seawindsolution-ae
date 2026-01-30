@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Bot, Target, Layers, Rocket, Lightbulb } from "lucide-react";
+import Image from "next/image";
 
 const WeDoWhat = () => {
   const sliderImages = [
@@ -149,7 +150,7 @@ const WeDoWhat = () => {
 
                   {/* CARD CONTENT */}
                   <div className="relative w-full h-full rounded-[40px] overflow-hidden">
-                    <img
+                    <Image
                       src={image.image}
                       alt={image.title}
                       className="w-full h-full object-cover"

@@ -2,6 +2,7 @@
 "use client";
 
 import Container from "@/components/common/Container";
+import Image from "next/image";
 import React, { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
@@ -10,43 +11,37 @@ const businessData = [
     id: 1,
     title: "AI That Converts, Not Just Manages",
     des: "Our intelligent system identifies high-intent leads and helps your team focus on opportunities that actually convert.",
-    image:
-       "/images/services/feature-1.avif",
+    image: "/images/services/feature-1.avif",
   },
   {
     id: 2,
     title: "Faster Lead Response = More Sales",
     des: "Instant alerts and automated follow-ups ensure every lead is contacted at the right time - before your competitors do.",
-    image:
-      "/images/services/feature-2.jpg",
+    image: "/images/services/feature-2.jpg",
   },
   {
     id: 3,
     title: "Smart Lead Distribution",
     des: "Leads are automatically assigned to the best-suited agents based on availability and performance, improving efficiency and results.",
-    image:
-         "/images/services/feature-3.jpg",
+    image: "/images/services/feature-3.jpg",
   },
   {
     id: 4,
     title: "Complete Sales Visibility",
     des: "Get real-time insights into leads, agent productivity, and conversion trends - all from one powerful dashboard.",
-    image:
-         "/images/services/feature-4.avif",
+    image: "/images/services/feature-4.avif",
   },
   {
     id: 5,
     title: "Built-In Marketing Power",
     des: "Run email campaigns, nurture leads, and build trust using your own domain - no extra tools required.",
-    image:
-       "/images/services/feature-5.avif",
+    image: "/images/services/feature-5.avif",
   },
   {
     id: 6,
     title: "Secure, Scalable & Business-Ready",
     des: "Enterprise-grade security, quick setup, and seamless integrations make it the perfect solution for growing businesses.",
-    image:
-     "/images/services/feature-3.jpg",
+    image: "/images/services/feature-3.jpg",
   },
 ];
 
@@ -69,17 +64,14 @@ export default function AiLmsServicesSlider() {
     <section
       className="relative w-full py-10 bg-white overflow-hidden flex items-center bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage:
-          'url("/images/services/services-bgg.avif")',
+        backgroundImage: 'url("/images/services/services-bgg.avif")',
       }}
     >
       <Container className="flex flex-col lg:flex-row h-full relative z-10">
         {/* Left Section */}
         <div className="w-full lg:w-full flex flex-col justify-center lg:pr-12 mb-12 lg:mb-0">
-    
-
           <h1 className=" font-extrabold font-chakrapetch text-white text-[45px] mb-6 tracking-tight">
-       Why Choose Our AI Lead CRM Sales Automation?
+            Why Choose Our AI Lead CRM Sales Automation?
           </h1>
 
           <div className="flex gap-4">
@@ -128,10 +120,12 @@ export default function AiLmsServicesSlider() {
                   className="flex-shrink-0 w-[340px] rounded-2xl overflow-hidden shadow-lg group cursor-pointer hover:-translate-y-2 transition-transform duration-300"
                 >
                   <div className="h-48 overflow-hidden relative">
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                       fill
+                      className="object-cover"
+                       sizes="340px"
                     />
                     <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
                   </div>

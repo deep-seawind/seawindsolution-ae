@@ -2,9 +2,8 @@ import { blogs } from "@/app/api/data";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import HeroSub from "@/components/common/SharedComponents/HeroSub";
-import React, { useState } from "react";
-import { Metadata } from "next";
-import Link from "next/link";
+import React from "react";
+import { Metadata } from "next"; 
 import { Icon } from "@iconify/react";
 
 import blog1 from "@/../public/images/blog/service-1.webp";

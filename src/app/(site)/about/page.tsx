@@ -50,14 +50,15 @@ const Page = () => {
             We aim to provide stable and high-quality products at optimal rates,
             empowering our technical expertise to provide outstanding services
             and deliver on-time high-quality solutions. We have a tremendous
-            growth rate due to our focus on the approval of customer's needs and
+            growth rate due to our focus on the approval of customer&apos;s needs and
             desires. We provide complete solutions to all your Web needs. We
             possess a skilled team for designers and developers who specialize
             in creating excellent designs and developing equally competent
             applications that are simple yet dynamic and without a doubt present
-            our client's business or product. Work with the formula of customer
+            our client&apos;s business or product. Work with the formula of customer
             satisfaction.
           </p>
+
           <br />
 
           <p className="text-gray-700 leading-relaxed text-[17px]">
