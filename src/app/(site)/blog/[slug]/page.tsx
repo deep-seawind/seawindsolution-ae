@@ -65,12 +65,14 @@ export const metadata: Metadata = {
     title: "Blog Details | Axora",
 };
 
-type Props = {
-    params: { slug: string };
+type PageProps = {
+  params: {
+    slug: string;
+  };
 };
 
-const BlogDetails = ({ params }: Props) => {
-    const blog = blogs.find((b) => b.slug === params.slug);
+export default function BlogDetails({ params }: PageProps) {
+  const blog = blogs.find((b) => b.slug === params.slug);
 
     if (!blog) return notFound();
 
@@ -223,5 +225,4 @@ const BlogDetails = ({ params }: Props) => {
         </>
     );
 };
-
-export default BlogDetails;
+ 
