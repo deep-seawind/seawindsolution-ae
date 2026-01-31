@@ -15,7 +15,7 @@ import {
 import { servicePageContent } from "@/data/servicePageContent";
 import { Pricing } from "@/components";
 
-// --- Local Interfaces to clear 'any' and property errors ---
+// --- Updated Concrete Interfaces ---
 
 interface ServiceItem {
   title: string;
@@ -37,6 +37,29 @@ interface FeatureItem {
   description: string;
   icon: string;
   image: string;
+}
+
+// Fixed: Added description and image to match the 'Industry' type requirement
+interface IndustryItem {
+  name: string;
+  description: string; 
+  image: string;      
+  icon: string;
+}
+
+interface TechnologyItem {
+  name: string;
+  icon: string;
+}
+
+interface BenefitItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface LocationItem {
+  name: string;
 }
 
 interface DomainContent {
@@ -69,17 +92,17 @@ interface DomainContent {
   location: {
     title: string;
     description: string;
-    locations: any[]; 
+    locations: (string | LocationItem)[]; 
   };
   industries: {
     title: string;
     description: string;
-    items: any[];
+    items: IndustryItem[];
   };
   technology: {
     title: string;
     description: string;
-    items: any[];
+    items: TechnologyItem[];
   };
   features?: {
     title: string;
@@ -89,7 +112,7 @@ interface DomainContent {
   benefits: {
     title: string;
     description: string;
-    items: any[];
+    items: BenefitItem[];
   };
 }
 
@@ -100,7 +123,6 @@ const DomainRegistration: React.FC = () => {
     { href: "/services/domain-registration", text: "Domain Registration" },
   ];
 
-  // Cast to unknown first to bypass strict overlap checks
   const content = servicePageContent["domain-registration"] as unknown as DomainContent;
 
   return (
@@ -136,7 +158,7 @@ const DomainRegistration: React.FC = () => {
         description={content.process.description}
         steps={content.process.steps.map((step) => ({
           ...step,
-          id: String(step.id), // Component prop requires string
+          id: String(step.id),
         }))}
       />
 
@@ -150,7 +172,6 @@ const DomainRegistration: React.FC = () => {
       <LocationSection
         title={content.location.title}
         description={content.location.description}
-        // Ensuring locations are passed as string array
         locations={(content.location.locations || []).map((loc) => 
             typeof loc === 'string' ? loc : loc.name
         )}
@@ -173,7 +194,6 @@ const DomainRegistration: React.FC = () => {
       <FeaturesSection
         title={content.features?.title || "Key Features"}
         description={content.features?.description || "Advanced features"}
-        // Map 'description' to 'des' for FeaturesSection compatibility
         features={(content.features?.items || []).map((item) => ({
           title: item.title,
           des: item.description,

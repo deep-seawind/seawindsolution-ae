@@ -15,7 +15,7 @@ import {
 import { servicePageContent } from "@/data/servicePageContent";
 import { Pricing } from "@/components";
 
-// --- Local Interfaces to clear 'any' and property errors ---
+// --- Concrete Interfaces to satisfy @typescript-eslint/no-explicit-any ---
 
 interface ServiceItem {
   title: string;
@@ -37,6 +37,28 @@ interface FeatureItem {
   description: string;
   icon: string;
   image: string;
+}
+
+interface IndustryItem {
+  name: string;
+  description: string;
+  image: string;
+  icon: string;
+}
+
+interface TechnologyItem {
+  name: string;
+  icon: string;
+}
+
+interface BenefitItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface LocationItem {
+  name: string;
 }
 
 interface GSuiteContent {
@@ -69,17 +91,17 @@ interface GSuiteContent {
   location: {
     title: string;
     description: string;
-    locations: any[]; 
+    locations: (string | LocationItem)[]; 
   };
   industries: {
     title: string;
     description: string;
-    items: any[];
+    items: IndustryItem[];
   };
   technology: {
     title: string;
     description: string;
-    items: any[];
+    items: TechnologyItem[];
   };
   features?: {
     title: string;
@@ -89,7 +111,7 @@ interface GSuiteContent {
   benefits: {
     title: string;
     description: string;
-    items: any[];
+    items: BenefitItem[];
   };
 }
 
@@ -100,7 +122,6 @@ const GSuite: React.FC = () => {
     { href: "/services/gsuite", text: "G Suite" },
   ];
 
-  // Cast to unknown first to bypass strict overlap checks
   const content = servicePageContent["gsuite"] as unknown as GSuiteContent;
 
   return (
@@ -136,7 +157,7 @@ const GSuite: React.FC = () => {
         description={content.process.description}
         steps={content.process.steps.map((step) => ({
           ...step,
-          id: String(step.id), // Component prop requires string
+          id: String(step.id),
         }))}
       />
 
@@ -172,7 +193,6 @@ const GSuite: React.FC = () => {
       <FeaturesSection
         title={content.features?.title || "Key Features"}
         description={content.features?.description || "Advanced features"}
-        // Map 'description' to 'des' for FeaturesSection compatibility
         features={(content.features?.items || []).map((item) => ({
           title: item.title,
           des: item.description,

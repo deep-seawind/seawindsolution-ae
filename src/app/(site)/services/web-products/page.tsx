@@ -15,7 +15,7 @@ import {
 import { servicePageContent } from "@/data/servicePageContent";
 import { Pricing } from "@/components";
 
-// --- Local Interfaces to resolve Type errors ---
+// --- Concrete Interfaces for Type Safety ---
 
 interface ServiceItem {
   title: string;
@@ -37,6 +37,28 @@ interface FeatureItem {
   description: string;
   icon: string;
   image: string;
+}
+
+interface IndustryItem {
+  name: string;
+  description: string;
+  image: string;
+  icon: string;
+}
+
+interface TechnologyItem {
+  name: string;
+  icon: string;
+}
+
+interface BenefitItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface LocationItem {
+  name: string;
 }
 
 interface WebProductsContent {
@@ -69,17 +91,17 @@ interface WebProductsContent {
   location: {
     title: string;
     description: string;
-    locations: any[]; 
+    locations: (string | LocationItem)[]; 
   };
   industries: {
     title: string;
     description: string;
-    items: any[];
+    items: IndustryItem[];
   };
   technology: {
     title: string;
     description: string;
-    items: any[];
+    items: TechnologyItem[];
   };
   features?: {
     title: string;
@@ -89,7 +111,7 @@ interface WebProductsContent {
   benefits: {
     title: string;
     description: string;
-    items: any[];
+    items: BenefitItem[];
   };
 }
 
@@ -100,7 +122,6 @@ const WebProducts: React.FC = () => {
     { href: "/services/web-products", text: "Web Products" },
   ];
 
-  // Cast to unknown first to safely bridge the data structure
   const content = servicePageContent["web-products"] as unknown as WebProductsContent;
 
   return (
@@ -141,7 +162,7 @@ const WebProducts: React.FC = () => {
         description={content.process.description}
         steps={content.process.steps.map((step) => ({
           ...step,
-          id: String(step.id), // Component prop requires string
+          id: String(step.id),
         }))}
       />
 
@@ -177,7 +198,6 @@ const WebProducts: React.FC = () => {
       <FeaturesSection
         title={content.features?.title || "Key Features"}
         description={content.features?.description || "Advanced tools"}
-        // Mapping 'description' to 'des' to satisfy the component prop
         features={(content.features?.items || []).map((item) => ({
           title: item.title,
           des: item.description,

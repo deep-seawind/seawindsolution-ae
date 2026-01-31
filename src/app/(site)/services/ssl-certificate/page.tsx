@@ -15,7 +15,7 @@ import {
 import { servicePageContent } from "@/data/servicePageContent";
 import { Pricing } from "@/components";
 
-// --- Local Interfaces to enforce type safety ---
+// --- Concrete Interfaces to satisfy Type Safety ---
 
 interface ServiceItem {
   title: string;
@@ -37,6 +37,28 @@ interface FeatureItem {
   description: string;
   icon: string;
   image: string;
+}
+
+interface IndustryItem {
+  name: string;
+  description: string;
+  image: string;
+  icon: string;
+}
+
+interface TechnologyItem {
+  name: string;
+  icon: string;
+}
+
+interface BenefitItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface LocationItem {
+  name: string;
 }
 
 interface SSLContent {
@@ -69,17 +91,17 @@ interface SSLContent {
   location: {
     title: string;
     description: string;
-    locations: any[]; 
+    locations: (string | LocationItem)[]; 
   };
   industries: {
     title: string;
     description: string;
-    items: any[];
+    items: IndustryItem[];
   };
   technology: {
     title: string;
     description: string;
-    items: any[];
+    items: TechnologyItem[];
   };
   features?: {
     title: string;
@@ -89,7 +111,7 @@ interface SSLContent {
   benefits: {
     title: string;
     description: string;
-    items: any[];
+    items: BenefitItem[];
   };
 }
 
@@ -100,7 +122,6 @@ const SSLCertificate: React.FC = () => {
     { href: "/services/ssl-certificate", text: "SSL Certificate" },
   ];
 
-  // Casting through unknown to bridge the data structure to our interface
   const content = servicePageContent["ssl-certificate"] as unknown as SSLContent;
 
   return (
@@ -111,8 +132,6 @@ const SSLCertificate: React.FC = () => {
         breadcrumbLinks={breadcrumbLinks}
         heroImage="/images/hero/banner-image.avif"
       />
-
-      
 
       <ServiceSection
         title={content.services.title}
@@ -174,7 +193,6 @@ const SSLCertificate: React.FC = () => {
       <FeaturesSection
         title={content.features?.title || "Key Features"}
         description={content.features?.description || "Advanced security features"}
-        // Map 'description' to 'des' to match component prop requirements
         features={(content.features?.items || []).map((item) => ({
           title: item.title,
           des: item.description,

@@ -15,7 +15,7 @@ import {
 import { servicePageContent } from "@/data/servicePageContent";
 import { Pricing } from "@/components";
 
-// --- Local Interfaces to resolve Type errors and 'any' usage ---
+// --- Explicit Interfaces to satisfy Type Safety ---
 
 interface ServiceItem {
   title: string;
@@ -37,6 +37,28 @@ interface FeatureItem {
   description: string;
   icon: string;
   image: string;
+}
+
+interface IndustryItem {
+  name: string;
+  description: string;
+  image: string;
+  icon: string;
+}
+
+interface TechnologyItem {
+  name: string;
+  icon: string;
+}
+
+interface BenefitItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface LocationItem {
+  name: string;
 }
 
 interface ITBusinessContent {
@@ -69,17 +91,17 @@ interface ITBusinessContent {
   location: {
     title: string;
     description: string;
-    locations: any[]; 
+    locations: (string | LocationItem)[]; 
   };
   industries: {
     title: string;
     description: string;
-    items: any[];
+    items: IndustryItem[];
   };
   technology: {
     title: string;
     description: string;
-    items: any[];
+    items: TechnologyItem[];
   };
   features?: {
     title: string;
@@ -89,7 +111,7 @@ interface ITBusinessContent {
   benefits: {
     title: string;
     description: string;
-    items: any[];
+    items: BenefitItem[];
   };
 }
 
@@ -100,7 +122,7 @@ const StartYourItBusiness: React.FC = () => {
     { href: "/services/start-your-it-business", text: "Start Your IT Business" },
   ];
 
-  // Casting through unknown to align our data file with the strict interface
+  // Map the data structure to the interface
   const content = servicePageContent["start-your-it-business"] as unknown as ITBusinessContent;
 
   return (
@@ -138,7 +160,7 @@ const StartYourItBusiness: React.FC = () => {
         description={content.process.description}
         steps={content.process.steps.map((step) => ({
           ...step,
-          id: String(step.id), // Ensure ID is string for component
+          id: String(step.id),
         }))}
       />
 
@@ -174,7 +196,7 @@ const StartYourItBusiness: React.FC = () => {
       <FeaturesSection
         title={content.features?.title || "Key Features"}
         description={content.features?.description || "Advanced tools"}
-        // Mapping 'description' to 'des' to satisfy component props
+        // Mapping 'description' to 'des' for component compatibility
         features={(content.features?.items || []).map((item) => ({
           title: item.title,
           des: item.description,

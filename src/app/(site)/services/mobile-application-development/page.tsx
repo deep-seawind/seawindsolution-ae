@@ -15,7 +15,7 @@ import {
 import { servicePageContent } from "@/data/servicePageContent";
 import { Pricing } from "@/components";
 
-// --- Interfaces to resolve Type errors ---
+// --- Concrete Interfaces to eliminate 'any' ---
 
 interface ServiceItem {
   title: string;
@@ -37,6 +37,28 @@ interface FeatureItem {
   description: string;
   icon: string;
   image: string;
+}
+
+interface IndustryItem {
+  name: string;
+  description: string;
+  image: string;
+  icon: string;
+}
+
+interface TechnologyItem {
+  name: string;
+  icon: string;
+}
+
+interface BenefitItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface LocationItem {
+  name: string;
 }
 
 interface MobileDevContent {
@@ -69,17 +91,17 @@ interface MobileDevContent {
   location: {
     title: string;
     description: string;
-    locations: any[]; 
+    locations: (string | LocationItem)[]; 
   };
   industries: {
     title: string;
     description: string;
-    items: any[];
+    items: IndustryItem[];
   };
   technology: {
     title: string;
     description: string;
-    items: any[];
+    items: TechnologyItem[];
   };
   features?: {
     title: string;
@@ -89,7 +111,7 @@ interface MobileDevContent {
   benefits: {
     title: string;
     description: string;
-    items: any[];
+    items: BenefitItem[];
   };
 }
 
@@ -100,7 +122,6 @@ const MobileApplicationDevelopment: React.FC = () => {
     { href: "/services/mobile-application-development", text: "Mobile Application Development" },
   ];
 
-  // Cast to unknown first to safely bridge the data structure
   const content = servicePageContent["mobile-application-development"] as unknown as MobileDevContent;
 
   return (
@@ -131,12 +152,17 @@ const MobileApplicationDevelopment: React.FC = () => {
         buttonText={content.call.buttonText || "Talk to an Expert"}
       />
 
+      
+
+[Image of mobile app development lifecycle]
+
+
       <ProcessSection
         title={content.process.title}
         description={content.process.description}
         steps={content.process.steps.map((step) => ({
           ...step,
-          id: String(step.id), // Ensure ID is string for component
+          id: String(step.id),
         }))}
       />
 
@@ -172,7 +198,6 @@ const MobileApplicationDevelopment: React.FC = () => {
       <FeaturesSection
         title={content.features?.title || "Key Features"}
         description={content.features?.description || "Advanced features"}
-        // Map 'description' to 'des' for FeaturesSection compatibility
         features={(content.features?.items || []).map((item) => ({
           title: item.title,
           des: item.description,

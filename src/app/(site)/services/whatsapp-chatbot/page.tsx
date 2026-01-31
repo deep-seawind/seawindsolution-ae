@@ -15,7 +15,7 @@ import {
 import { servicePageContent } from "@/data/servicePageContent";
 import { Pricing } from "@/components";
 
-// --- Interfaces to resolve Type errors ---
+// --- Concrete Interfaces to replace 'any' ---
 
 interface ServiceItem {
   title: string;
@@ -37,6 +37,28 @@ interface FeatureItem {
   description: string;
   icon: string;
   image: string;
+}
+
+interface IndustryItem {
+  name: string;
+  description: string;
+  image: string;
+  icon: string;
+}
+
+interface TechnologyItem {
+  name: string;
+  icon: string;
+}
+
+interface BenefitItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface LocationItem {
+  name: string;
 }
 
 interface ChatbotContent {
@@ -69,17 +91,17 @@ interface ChatbotContent {
   location: {
     title: string;
     description: string;
-    locations: any[]; 
+    locations: (string | LocationItem)[]; 
   };
   industries: {
     title: string;
     description: string;
-    items: any[];
+    items: IndustryItem[];
   };
   technology: {
     title: string;
     description: string;
-    items: any[];
+    items: TechnologyItem[];
   };
   features?: {
     title: string;
@@ -89,7 +111,7 @@ interface ChatbotContent {
   benefits: {
     title: string;
     description: string;
-    items: any[];
+    items: BenefitItem[];
   };
 }
 
@@ -100,7 +122,6 @@ const WhatsappChatbot: React.FC = () => {
     { href: "/services/whatsapp-chatbot", text: "WhatsApp Chatbot" },
   ];
 
-  // Pointing to the correct key in your data file
   const content = servicePageContent["whatsapp-chatbot"] as unknown as ChatbotContent;
 
   return (
@@ -111,8 +132,6 @@ const WhatsappChatbot: React.FC = () => {
         breadcrumbLinks={breadcrumbLinks}
         heroImage="/images/hero/banner-image.avif"
       />
-
-      
 
       <ServiceSection
         title={content.services.title}
@@ -132,6 +151,8 @@ const WhatsappChatbot: React.FC = () => {
         description={content.call.description}
         buttonText={content.call.buttonText || "Consult Now"}
       />
+
+      
 
       <ProcessSection
         title={content.process.title}
@@ -174,7 +195,6 @@ const WhatsappChatbot: React.FC = () => {
       <FeaturesSection
         title={content.features?.title || "Key Features"}
         description={content.features?.description || "Smart Automation Features"}
-        // Mapping 'description' to 'des' to match component prop requirements
         features={(content.features?.items || []).map((item) => ({
           title: item.title,
           des: item.description,

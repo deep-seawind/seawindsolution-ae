@@ -15,7 +15,7 @@ import {
 import { servicePageContent } from "@/data/servicePageContent";
 import { Pricing } from "@/components";
 
-// --- Local Interfaces to resolve Type errors and 'any' usage ---
+// --- Concrete Interfaces to satisfy @typescript-eslint/no-explicit-any ---
 
 interface ServiceItem {
   title: string;
@@ -37,6 +37,28 @@ interface FeatureItem {
   description: string;
   icon: string;
   image: string;
+}
+
+interface IndustryItem {
+  name: string;
+  description: string;
+  image: string;
+  icon: string;
+}
+
+interface TechnologyItem {
+  name: string;
+  icon: string;
+}
+
+interface BenefitItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface LocationItem {
+  name: string;
 }
 
 interface VisitorContent {
@@ -69,17 +91,17 @@ interface VisitorContent {
   location: {
     title: string;
     description: string;
-    locations: any[]; 
+    locations: (string | LocationItem)[]; 
   };
   industries: {
     title: string;
     description: string;
-    items: any[];
+    items: IndustryItem[];
   };
   technology: {
     title: string;
     description: string;
-    items: any[];
+    items: TechnologyItem[];
   };
   features?: {
     title: string;
@@ -89,7 +111,7 @@ interface VisitorContent {
   benefits: {
     title: string;
     description: string;
-    items: any[];
+    items: BenefitItem[];
   };
 }
 
@@ -100,7 +122,6 @@ const VisitorManagement: React.FC = () => {
     { href: "/services/visitor-management", text: "Visitor Management" },
   ];
 
-  // Casting through unknown to align our data file with the strict interface
   const content = servicePageContent["visitor-management"] as unknown as VisitorContent;
 
   return (
@@ -141,7 +162,7 @@ const VisitorManagement: React.FC = () => {
         description={content.process.description}
         steps={content.process.steps.map((step) => ({
           ...step,
-          id: String(step.id), // Ensure ID is string for component
+          id: String(step.id),
         }))}
       />
 
@@ -177,7 +198,6 @@ const VisitorManagement: React.FC = () => {
       <FeaturesSection
         title={content.features?.title || "Key Features"}
         description={content.features?.description || "Advanced security features"}
-        // Mapping 'description' to 'des' to satisfy component props
         features={(content.features?.items || []).map((item) => ({
           title: item.title,
           des: item.description,
