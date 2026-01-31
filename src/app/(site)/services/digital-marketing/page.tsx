@@ -15,7 +15,7 @@ import {
 import { servicePageContent } from "@/data/servicePageContent";
 import { Pricing } from "@/components";
 
-// --- Interfaces for Type Safety ---
+// --- Concrete Interfaces ---
 
 interface ServiceItem {
   title: string;
@@ -39,6 +39,28 @@ interface FeatureItem {
   image: string;
 }
 
+interface IndustryItem {
+  name: string;
+  description: string;
+  image: string;
+  icon: string;
+}
+
+interface TechnologyItem {
+  name: string;
+  icon: string;
+}
+
+interface BenefitItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface LocationItem {
+  name: string;
+}
+
 interface MarketingContent {
   services: {
     title: string;
@@ -48,7 +70,7 @@ interface MarketingContent {
   form: {
     title: string;
     subtitle: { text: string }[];
-    buttonText?: string; 
+    buttonText?: string;
   };
   call: {
     title: string;
@@ -64,22 +86,22 @@ interface MarketingContent {
     title: string;
     description: string;
     features: FeatureItem[];
-    image?: string; 
+    image?: string;
   };
   location: {
     title: string;
     description: string;
-    locations: any[]; 
+    locations: (string | LocationItem)[]; 
   };
   industries: {
     title: string;
     description: string;
-    items: any[];
+    items: IndustryItem[]; // Fixed: replaced any[]
   };
   technology: {
     title: string;
     description: string;
-    items: any[];
+    items: TechnologyItem[]; // Fixed: replaced any[]
   };
   features?: {
     title: string;
@@ -89,7 +111,7 @@ interface MarketingContent {
   benefits: {
     title: string;
     description: string;
-    items: any[];
+    items: BenefitItem[]; // Fixed: replaced any[]
   };
 }
 
@@ -100,7 +122,7 @@ const DigitalMarketing: React.FC = () => {
     { href: "/services/digital-marketing", text: "Digital Marketing" },
   ];
 
-  // Cast through unknown to safely map data to our strict interface
+  // Map the data to our strict interface
   const content = servicePageContent["digital-marketing"] as unknown as MarketingContent;
 
   return (
@@ -112,6 +134,8 @@ const DigitalMarketing: React.FC = () => {
         heroImage="/images/hero/banner-image.avif"
       />
 
+      
+
       <ServiceSection
         title={content.services.title}
         image={content.services.image}
@@ -122,7 +146,7 @@ const DigitalMarketing: React.FC = () => {
       <FormSection
         title={content.form.title}
         subtitle={content.form.subtitle}
-        buttonText={content.form.buttonText || "Get Started"} 
+        buttonText={content.form.buttonText || "Get Started"}
       />
 
       <CallSection
@@ -136,7 +160,7 @@ const DigitalMarketing: React.FC = () => {
         description={content.process.description}
         steps={content.process.steps.map((step) => ({
           ...step,
-          id: String(step.id), // Ensure ID is string for component
+          id: String(step.id),
         }))}
       />
 
@@ -150,9 +174,8 @@ const DigitalMarketing: React.FC = () => {
       <LocationSection
         title={content.location.title}
         description={content.location.description}
-        // Extracting name strings if locations are objects
-        locations={(content.location.locations || []).map((loc) => 
-            typeof loc === 'string' ? loc : loc.name
+        locations={(content.location.locations || []).map((loc) =>
+          typeof loc === "string" ? loc : loc.name
         )}
       />
 
@@ -173,7 +196,6 @@ const DigitalMarketing: React.FC = () => {
       <FeaturesSection
         title={content.features?.title || "Key Features"}
         description={content.features?.description || "Advanced features"}
-        // Mapping 'description' to 'des' to satisfy the component prop
         features={(content.features?.items || []).map((item) => ({
           title: item.title,
           des: item.description,
