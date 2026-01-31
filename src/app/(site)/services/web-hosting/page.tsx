@@ -15,12 +15,53 @@ import {
 import { servicePageContent } from "@/data/servicePageContent";
 import { Pricing } from "@/components";
 
-// Updated type: location.locations is now string[]
-type CDNContent = {
+// --- Domain-Specific Interfaces ---
+
+interface ServiceItem {
+  title: string;
+  description: string;
+  icon: string;
+  image: string;
+}
+
+interface ProcessStep {
+  id: string | number;
+  color: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface FeatureItem {
+  title: string;
+  description: string;
+  icon: string;
+  image: string;
+}
+
+interface IndustryItem {
+  name: string;
+  description: string;
+  image: string;
+  icon: string;
+}
+
+interface TechnologyItem {
+  name: string;
+  icon: string;
+}
+
+interface BenefitItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+type WebHostingContent = {
   services: {
     title: string;
     image?: string;
-    items: any[];
+    items: ServiceItem[];
   };
   form: {
     title: string;
@@ -35,38 +76,38 @@ type CDNContent = {
   process: {
     title: string;
     description: string;
-    steps: any[];
+    steps: ProcessStep[];
   };
   whyChoose: {
     title: string;
     description: string;
-    features: any[];
+    features: FeatureItem[];
     image?: string;
   };
   location: {
     title: string;
     description: string;
-    locations: string[]; // <-- updated
+    locations: string[]; 
   };
   industries: {
     title: string;
     description: string;
-    items: any[];
+    items: IndustryItem[];
   };
   technology: {
     title: string;
     description: string;
-    items: any[];
+    items: TechnologyItem[];
   };
   features?: {
     title?: string;
     description?: string;
-    items?: any[];
+    items?: FeatureItem[];
   };
   benefits: {
     title: string;
     description: string;
-    items: any[];
+    items: BenefitItem[];
   };
 };
 
@@ -77,7 +118,8 @@ const WebHosting: React.FC = () => {
     { href: "/services/web-hosting", text: "Web Hosting" },
   ];
 
-  const content = servicePageContent["web-hosting"] as CDNContent;
+  // Cast to unknown first to bypass strict overlap checks from the data file
+  const content = servicePageContent["web-hosting"] as unknown as WebHostingContent;
 
   return (
     <div>
@@ -98,7 +140,7 @@ const WebHosting: React.FC = () => {
       <FormSection
         title={content.form.title}
         subtitle={content.form.subtitle}
-        buttonText={content.form.buttonText}
+        buttonText={content.form.buttonText || "Send"}
       />
 
       <CallSection
@@ -110,7 +152,10 @@ const WebHosting: React.FC = () => {
       <ProcessSection
         title={content.process.title}
         description={content.process.description}
-        steps={content.process.steps}
+        steps={content.process.steps.map(step => ({
+          ...step,
+          id: String(step.id) // Ensures ID is a string for component requirements
+        }))}
       />
 
       <WhyChooseSection
@@ -123,7 +168,7 @@ const WebHosting: React.FC = () => {
       <LocationSection
         title={content.location.title}
         description={content.location.description}
-        locations={content.location.locations} // now string[]
+        locations={content.location.locations}
       />
 
       <Pricing />
@@ -143,7 +188,12 @@ const WebHosting: React.FC = () => {
       <FeaturesSection
         title={content.features?.title || "Key Features"}
         description={content.features?.description || "Advanced features"}
-        features={content.features?.items || []}
+        // Transform 'description' to 'des' to match component expectation
+        features={(content.features?.items || []).map(item => ({
+          title: item.title,
+          des: item.description,
+          image: item.image
+        }))}
       />
 
       <BenefitsSection

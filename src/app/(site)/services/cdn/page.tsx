@@ -14,55 +14,100 @@ import {
 import { servicePageContent } from "@/data/servicePageContent";
 import { Pricing } from "@/components";
 
-// Define type for CDN content to avoid TS errors
-type CDNContent = {
+// --- Strictly Aligned Interfaces ---
+
+interface ServiceItem {
+  title: string;
+  description: string;
+  icon: string;
+  image: string;
+}
+
+interface FormSubtitle {
+  text: string;
+}
+
+interface ProcessStep {
+  id: string; 
+  color: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface FeatureItem {
+  title: string;
+  description: string; 
+  icon: string;
+  image: string;
+}
+
+interface IndustryItem {
+  name: string; 
+  description: string;
+  image: string;
+  icon: string;
+}
+
+interface TechnologyItem {
+  name: string;
+  icon: string; 
+}
+
+interface BenefitItem {
+  title: string;
+  description: string; // Made mandatory
+  icon: string;        // Added icon
+}
+
+interface CDNContent {
   services: {
     title: string;
-    image?: string;
-    items: any[];
+    image: string;
+    items: ServiceItem[];
   };
   form: {
     title: string;
-    subtitle?: { text: string }[];
+    subtitle: FormSubtitle[];
     buttonText?: string;
   };
   call: {
     title: string;
     description: string;
-    buttonText?: string;
+    buttonText: string;
   };
   process: {
     title: string;
     description: string;
-    steps: any[];
+    steps: ProcessStep[];
   };
   whyChoose: {
     title: string;
     description: string;
-    features: any[];
-    image?: string;
+    features: FeatureItem[];
+    image: string;
   };
   industries: {
     title: string;
     description: string;
-    items: any[];
+    items: IndustryItem[];
   };
   technology: {
     title: string;
     description: string;
-    items: any[];
+    items: TechnologyItem[];
   };
   features?: {
-    title?: string;
-    description?: string;
-    items?: any[];
+    title: string;
+    description: string;
+    items: FeatureItem[];
   };
   benefits: {
     title: string;
     description: string;
-    items: any[];
+    items: BenefitItem[];
   };
-};
+}
 
 const CDN: React.FC = () => {
   const breadcrumbLinks = [
@@ -71,8 +116,7 @@ const CDN: React.FC = () => {
     { href: "/services/cdn", text: "CDN" },
   ];
 
-  // Typecast content to CDNContent to satisfy TS
-  const content = servicePageContent["cdn"] as CDNContent;
+  const content = servicePageContent["cdn"] as unknown as CDNContent;
 
   return (
     <div>
@@ -93,19 +137,22 @@ const CDN: React.FC = () => {
       <FormSection
         title={content.form.title}
         subtitle={content.form.subtitle}
-        buttonText={content.form.buttonText || "Send"} // fallback if undefined
+        buttonText={content.form.buttonText || "Send"}
       />
 
       <CallSection
         title={content.call.title}
         description={content.call.description}
-        buttonText={content.call.buttonText || "Contact Us"} // fallback
+        buttonText={content.call.buttonText || "Contact Us"}
       />
 
       <ProcessSection
         title={content.process.title}
         description={content.process.description}
-        steps={content.process.steps}
+        steps={content.process.steps.map(step => ({
+            ...step,
+            id: String(step.id)
+        }))}
       />
 
       <WhyChooseSection
@@ -114,12 +161,6 @@ const CDN: React.FC = () => {
         features={content.whyChoose.features}
         image={content.whyChoose.image}
       />
-
-      {/* <LocationSection
-        title={content.location.title}
-        description={content.location.description}
-        locations={content.location.locations}
-      /> */}
 
       <Pricing />
 
@@ -132,19 +173,31 @@ const CDN: React.FC = () => {
       <TechnologySection
         title={content.technology.title}
         description={content.technology.description}
-        technologies={content.technology.items}
+        technologies={content.technology.items.map(tech => ({
+          name: tech.name,
+          icon: tech.icon || "mdi:check-circle" 
+        }))}
       />
 
       <FeaturesSection
         title={content.features?.title || "Key Features"}
         description={content.features?.description || "Advanced features"}
-        features={content.features?.items || []}
+        features={(content.features?.items || []).map(item => ({
+          title: item.title,
+          des: item.description,
+          image: item.image
+        }))}
       />
 
       <BenefitsSection
         title={content.benefits.title}
         description={content.benefits.description}
-        benefits={content.benefits.items}
+        // Mapping to ensure icon and description exist for the component
+        benefits={content.benefits.items.map(benefit => ({
+          title: benefit.title,
+          description: benefit.description || "",
+          icon: benefit.icon || "mdi:check-decagram" 
+        }))}
       />
     </div>
   );
