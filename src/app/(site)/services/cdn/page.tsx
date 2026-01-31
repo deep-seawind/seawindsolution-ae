@@ -38,11 +38,13 @@ const CDN = () => {
         icon="mdi:marketing"
         services={content.services.items}
       />
-      <FormSection
+       <FormSection
         title={content.form.title}
         subtitle={content.form.subtitle}
         buttonText={content.form.buttonText}
       />
+
+
       <CallSection
         title={content.call.title}
         description={content.call.description}

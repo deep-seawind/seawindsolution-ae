@@ -123,17 +123,21 @@ export const ServiceSection = ({
 
 // =============================== start Form Section Component ==============================
 
-export const FormSection = ({
+/* ✅ DEFINE PROPS HERE — SINGLE SOURCE OF TRUTH */
+export type FormSectionProps = {
+  title: string;
+  subtitle?: { text: string }[];
+  buttonText?: string;
+};
+
+export const FormSection: React.FC<FormSectionProps> = ({
   title,
   subtitle,
-}: {
-  title: string;
-  description: string;
-  subtitle?: Array<{ text: string }>;
+  buttonText = "Send",
 }) => {
   return (
-    <section className="w-full bg-white py-10 ">
-      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16 items-start lg:items-center ">
+    <section className="w-full bg-white py-10">
+      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16 items-start lg:items-center">
         {/* Left Content */}
         <div className="space-y-6">
           <h2 className="mt-4 font-chakrapetch text-start text-2xl md:text-3xl lg:text-3xl font-semibold">
@@ -175,7 +179,6 @@ export const FormSection = ({
               placeholder-gray-500 text-sm transition-all"
             />
 
-            {/* Phone Input */}
             <PhoneInput
               country={"in"}
               enableSearch
@@ -208,13 +211,15 @@ export const FormSection = ({
               </div>
             </div>
 
-            <button
-              type="button"
-              className="w-[100px] bg-[#004aad] hover:bg-blue-500 text-white font-medium 
-              py-2 px-6 rounded shadow-md transition-colors duration-200 mt-2"
-            >
-              Send
-            </button>
+            {buttonText && (
+              <button
+                type="button"
+                className="w-[100px] bg-[#004aad] hover:bg-blue-500 text-white font-medium 
+                py-2 px-6 rounded shadow-md transition-colors duration-200 mt-2"
+              >
+                {buttonText}
+              </button>
+            )}
           </form>
         </div>
       </Container>
