@@ -15,74 +15,173 @@ import {
 import { servicePageContent } from "@/data/servicePageContent";
 import { Pricing } from "@/components";
 
+// --- Interfaces to resolve Type errors ---
 
-const WhatsappChatbot = () => {
+interface ServiceItem {
+  title: string;
+  description: string;
+  icon: string;
+  image: string;
+}
+
+interface ProcessStep {
+  id: string | number;
+  color: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface FeatureItem {
+  title: string;
+  description: string;
+  icon: string;
+  image: string;
+}
+
+interface ChatbotContent {
+  services: {
+    title: string;
+    image: string;
+    items: ServiceItem[];
+  };
+  form: {
+    title: string;
+    subtitle: { text: string }[];
+    buttonText?: string; 
+  };
+  call: {
+    title: string;
+    description: string;
+    buttonText: string;
+  };
+  process: {
+    title: string;
+    description: string;
+    steps: ProcessStep[];
+  };
+  whyChoose: {
+    title: string;
+    description: string;
+    features: FeatureItem[];
+    image?: string; 
+  };
+  location: {
+    title: string;
+    description: string;
+    locations: any[]; 
+  };
+  industries: {
+    title: string;
+    description: string;
+    items: any[];
+  };
+  technology: {
+    title: string;
+    description: string;
+    items: any[];
+  };
+  features?: {
+    title: string;
+    description: string;
+    items: FeatureItem[];
+  };
+  benefits: {
+    title: string;
+    description: string;
+    items: any[];
+  };
+}
+
+const WhatsappChatbot: React.FC = () => {
   const breadcrumbLinks = [
     { href: "/", text: "Home" },
     { href: "/services", text: "Services" },
     { href: "/services/whatsapp-chatbot", text: "WhatsApp Chatbot" },
   ];
 
-  const content = servicePageContent ["web-hosting"];
+  // Pointing to the correct key in your data file
+  const content = servicePageContent["whatsapp-chatbot"] as unknown as ChatbotContent;
 
   return (
     <div>
       <HeroSub
-        title="Web Hosting"
-        description="Comprehensive Web Hosting solutions to grow your business online"
+        title="WhatsApp Chatbot"
+        description="Automate your customer engagement with intelligent WhatsApp Business solutions."
         breadcrumbLinks={breadcrumbLinks}
-           heroImage="/images/hero/banner-image.avif"
+        heroImage="/images/hero/banner-image.avif"
       />
+
+      
+
       <ServiceSection
         title={content.services.title}
         image={content.services.image}
-        icon="mdi:marketing"
+        icon="mdi:whatsapp"
         services={content.services.items}
       />
+
       <FormSection
         title={content.form.title}
         subtitle={content.form.subtitle}
-        buttonText={content.form.buttonText}
+        buttonText={content.form.buttonText || "Get Started"} 
       />
+
       <CallSection
         title={content.call.title}
         description={content.call.description}
-        buttonText={content.call.buttonText}
+        buttonText={content.call.buttonText || "Consult Now"}
       />
+
       <ProcessSection
         title={content.process.title}
         description={content.process.description}
-        steps={content.process.steps}
+        steps={content.process.steps.map((step) => ({
+          ...step,
+          id: String(step.id),
+        }))}
       />
+
       <WhyChooseSection
         title={content.whyChoose.title}
         description={content.whyChoose.description}
         features={content.whyChoose.features}
-        image={content.whyChoose.image}
+        image={content.whyChoose.image || "/images/why-choose/chatbot.avif"}
       />
+
       <LocationSection
         title={content.location.title}
         description={content.location.description}
-        locations={content.location.locations}
+        locations={(content.location.locations || []).map((loc) => 
+            typeof loc === 'string' ? loc : loc.name
+        )}
       />
 
-       <Pricing/>
+      <Pricing />
 
-       <IndustriesSection
+      <IndustriesSection
         title={content.industries.title}
         description={content.industries.description}
         industries={content.industries.items}
       />
+
       <TechnologySection
         title={content.technology.title}
         description={content.technology.description}
         technologies={content.technology.items}
       />
+
       <FeaturesSection
         title={content.features?.title || "Key Features"}
-        description={content.features?.description || "Advanced features"}
-        features={content.features?.items || []}
+        description={content.features?.description || "Smart Automation Features"}
+        // Mapping 'description' to 'des' to match component prop requirements
+        features={(content.features?.items || []).map((item) => ({
+          title: item.title,
+          des: item.description,
+          image: item.image,
+        }))}
       />
+
       <BenefitsSection
         title={content.benefits.title}
         description={content.benefits.description}
