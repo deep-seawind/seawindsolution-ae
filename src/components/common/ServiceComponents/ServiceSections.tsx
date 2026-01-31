@@ -120,10 +120,8 @@ export const ServiceSection = ({
 };
 
 // ====================================Service Sections Components End ====================================
-
-// =============================== start Form Section Component ==============================
-
-/* ✅ DEFINE PROPS HERE — SINGLE SOURCE OF TRUTH */
+ 
+ 
 export type FormSectionProps = {
   title: string;
   subtitle?: { text: string }[];
@@ -233,11 +231,11 @@ export const FormSection: React.FC<FormSectionProps> = ({
 export const CallSection = ({
   title,
   description,
-  buttonText,
+  buttonText = "Contact Us", // default fallback
 }: {
   title: string;
   description: string;
-  buttonText: string;
+  buttonText?: string;
 }) => {
   return (
     <section className="relative w-full py-10 overflow-hidden bg-gradient-to-r from-[#2c66b8] to-[#122549]">
@@ -263,13 +261,16 @@ export const CallSection = ({
           {description}
         </p>
 
-        <button className="bg-white text-[#122549] font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-colors">
-          {buttonText}
-        </button>
+        {buttonText && (
+          <button className="bg-white text-[#122549] font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-colors">
+            {buttonText}
+          </button>
+        )}
       </div>
     </section>
   );
 };
+
 // ================================== Call to Action Section end ==================================
 
 // ===============================    Process Section Component start ============================
@@ -384,21 +385,26 @@ export const ProcessSection = ({
 // ===============================    Process Section Component end ============================
 
 // ================================= Why Choose Us Section start ================================
-type Feature = {
+export type Feature = {
   title: string;
   description: string;
   image: string;
 };
-export const WhyChooseSection = ({
-  badgeText = "Why Choose",
-  title,
-  description,
-  features,
-}: {
+
+type WhyChooseSectionProps = {
   badgeText?: string;
   title: string;
   description: string;
   features: Feature[];
+  image?: string; // ✅ optional main image
+};
+
+export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({
+  badgeText = "Why Choose",
+  title,
+  description,
+  features,
+  image,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -432,7 +438,6 @@ export const WhyChooseSection = ({
                   activeIndex === index ? "bg-white/10" : "hover:bg-white/5"
                 }`}
               >
-                {/* Check Icon */}
                 <div className="flex-shrink-0">
                   <div
                     className={`flex h-6 w-6 items-center justify-center rounded-full shadow-lg transition-colors duration-300 ${
@@ -443,7 +448,6 @@ export const WhyChooseSection = ({
                   </div>
                 </div>
 
-                {/* Text */}
                 <div className="text-white">
                   <h3
                     className={`mb-3 text-lg md:text-xl font-bold transition-all duration-300 ${
@@ -483,7 +487,7 @@ export const WhyChooseSection = ({
               >
                 <Image
                   key={activeIndex}
-                  src={features[activeIndex].image}
+                  src={image || features[activeIndex].image} // ✅ use main image if provided
                   alt={features[activeIndex].title}
                   fill
                   className="object-cover transition-opacity duration-500"
