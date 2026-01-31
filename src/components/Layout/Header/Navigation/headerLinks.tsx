@@ -496,6 +496,11 @@ const HeaderLinks: React.FC<{ item: HeaderItem }> = ({ item }) => {
     }
   };
 
+  interface SubMenuItem {
+  label: string;
+  href: string;
+}
+
   return (
     <>
       <div className="relative group" ref={menuRef}>
@@ -517,27 +522,30 @@ const HeaderLinks: React.FC<{ item: HeaderItem }> = ({ item }) => {
           )}
         </Link>
 
-        {item.submenu && !isServicesMenu && (
-          <div
-            className={`absolute left-0 top-full rounded-lg mt-2 w-60 bg-white shadow-xl overflow-hidden transition-all duration-300 ease-in-out z-50 ${
-              submenuOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
-            }`}
-          >
-            {item.submenu.map((subItem: any, index: number) => (
-              <Link
-                key={index}
-                href={subItem.href}
-                className={`block px-5 py-3 text-sm font-medium transition-all duration-200 ${
-                  path === subItem.href
-                    ? "text-white bg-[#004aad]"
-                    : "text-gray-700 hover:bg-[#004aad] hover:text-white hover:pl-6"
-                }`}
-              >
-                {subItem.label}
-              </Link>
-            ))}
-          </div>
-        )}
+      {item.submenu && !isServicesMenu && (
+  <div
+    className={`absolute left-0 top-full rounded-lg mt-2 w-60 bg-white shadow-xl overflow-hidden transition-all duration-300 ease-in-out z-50 ${
+      submenuOpen
+        ? "opacity-100 scale-100 visible"
+        : "opacity-0 scale-95 invisible"
+    }`}
+  >
+    {item.submenu.map((subItem: SubMenuItem, index: number) => (
+      <Link
+        key={index}
+        href={subItem.href}
+        className={`block px-5 py-3 text-sm font-medium transition-all duration-200 ${
+          path === subItem.href
+            ? "text-white bg-[#004aad]"
+            : "text-gray-700 hover:bg-[#004aad] hover:text-white hover:pl-6"
+        }`}
+      >
+        {subItem.label}
+      </Link>
+    ))}
+  </div>
+)}
+
 
         {isServicesMenu && (
           <div className={`absolute z-50 transition-all duration-300 ${

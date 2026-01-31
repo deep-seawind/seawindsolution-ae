@@ -2,6 +2,7 @@
 "use client";
 
 import Container from "@/components/common/Container";
+import Image from "next/image";
 import React, { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
@@ -126,9 +127,10 @@ export default function WebFeature() {
                   className="flex-shrink-0 w-[340px] rounded-2xl overflow-hidden shadow-lg group cursor-pointer hover:-translate-y-2 transition-transform duration-300"
                 >
                   <div className="h-48 overflow-hidden relative">
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.title}
+                      fill
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>

@@ -617,7 +617,8 @@ export const IndustriesSection = ({
                 {({ isActive }) => (
                   <div className="relative w-full h-full bg-neutral-900 rounded-3xl overflow-hidden group">
                     {/* Background Image */}
-                    <img
+                    <Image
+                    fill
                       src={industry.image}
                       alt={industry.name}
                       className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
@@ -810,7 +811,8 @@ export const FeaturesSection = ({
                   className="flex-shrink-0 w-[340px] rounded-2xl overflow-hidden shadow-lg group cursor-pointer hover:-translate-y-2 transition-transform duration-300"
                 >
                   <div className="h-48 overflow-hidden relative">
-                    <img
+                    <Image
+                    fill
                       src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

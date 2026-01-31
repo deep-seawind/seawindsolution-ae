@@ -126,7 +126,7 @@ const CgiForm = () => {
             justify-between w-full max-w-xs sm:max-w-sm mx-auto lg:mx-0">
               <div className="flex items-center gap-3">
                 <div className="w-6 h-6 border-2 border-gray-400 rounded-sm bg-white cursor-pointer hover:border-gray-500"></div>
-                <span className="text-sm text-gray-700 font-medium">I'm not a robot</span>
+                <span className="text-sm text-gray-700 font-medium">I&apos;m not a robot</span>
               </div>
               <div className="flex flex-col items-center justify-center text-[10px] text-gray-500">
                 <MdRefresh className="text-2xl text-[#004aad] mb-1" />
