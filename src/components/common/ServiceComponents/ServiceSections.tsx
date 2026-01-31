@@ -22,8 +22,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import "swiper/css";
-import { features } from "process";
+import "swiper/css"; 
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 // ====================================Service Sections Components start====================================
@@ -82,22 +81,26 @@ export const ServiceSection = ({
                 "
               />
 
-              {/* Image */}
-              <div className="relative h-48 w-full">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-blue-900/10" />
+              {/* Image */} 
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
 
-                {/* Icon */}
-                <div className="absolute -bottom-8 left-8 z-20">
-                  <div className="w-16 h-16 bg-[#0B1C3E] rounded-full flex items-center justify-center border-[5px] border-white">
-                    <Icon icon={service.icon} className="w-6 h-6 text-white" />
+                  <div className="absolute inset-0 bg-blue-900/10" />
+
+                  {/* Icon */}
+                  <div className="absolute -bottom-8 left-8 z-20">
+                    <div className="w-16 h-16 bg-[#0B1C3E] rounded-full flex items-center justify-center border-[5px] border-white">
+                      <Icon icon={service.icon} className="w-6 h-6 text-white" />
+                    </div>
                   </div>
                 </div>
-              </div>
+
 
               {/* Content */}
               <div className="relative pt-12 px-6 pb-8 flex flex-col z-10">
@@ -195,7 +198,7 @@ export const FormSection = ({
               <div className="flex items-center gap-3">
                 <div className="w-6 h-6 border-2 border-gray-400 rounded-sm bg-white"></div>
                 <span className="text-sm text-gray-700 font-medium">
-                  I'm not a robot
+                  I&apos;m not a robot
                 </span>
               </div>
               <div className="flex flex-col items-center text-[10px] text-gray-500">

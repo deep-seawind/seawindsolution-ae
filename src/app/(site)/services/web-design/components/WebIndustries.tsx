@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import Container from "@/components/common/Container";
+import Image from "next/image";
 
 // Sample Data for Web Development Services
 const services = [
@@ -105,9 +106,10 @@ export default function WebIndustries() {
                   className={`relative w-full h-full bg-neutral-900 rounded-3xl overflow-hidden group`}
                 >
                   {/* Background Image */}
-                  <img
+                  <Image
                     src={service.img}
                     alt={service.title}
+                    fill
                     className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                   />
 

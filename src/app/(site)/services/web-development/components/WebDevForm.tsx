@@ -1,6 +1,5 @@
 import Container from "@/components/common/Container";
-import React from "react";
-import { FaCheck } from "react-icons/fa";
+import React from "react"; 
 import { MdRefresh } from "react-icons/md";
 
 const WebDevForm = () => {
@@ -27,7 +26,7 @@ const WebDevForm = () => {
 
             <p className="mt-6 text-gray-600 text-sm md:text-base text-start  leading-relaxed">
               At Seawind Solution, we believe that your website is more than
-              just a digital address—it's your brand’s personality, your
+              just a digital address—it&apos;s your brand’s personality, your
               business’s most powerful marketing tool, and your gateway to a
               global audience. We take pride in being the top web development
               agency in Dubai, crafting SEO-friendly, responsive, and
@@ -101,7 +100,7 @@ const WebDevForm = () => {
               <div className="flex items-center gap-3">
                 <div className="w-6 h-6 border-2 border-gray-400 rounded-sm bg-white cursor-pointer hover:border-gray-500"></div>
                 <span className="text-sm text-gray-700 font-medium">
-                  I'm not a robot
+                  I&apos;m not a robot
                 </span>
               </div>
               <div className="flex flex-col items-center justify-center text-[10px] text-gray-500">

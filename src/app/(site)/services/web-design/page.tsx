@@ -1,6 +1,5 @@
 import React from "react";
-import HeroSub from "@/components/common/SharedComponents/HeroSub/index";
-import WebServices from "./components/WebIndustries";
+import HeroSub from "@/components/common/SharedComponents/HeroSub/index"; 
 import WebDevForm from "./components/WebForm";
 import CallPage from "./components/CallPage";
 import WebworkProcess from "./components/WebworkProcess";
@@ -12,8 +11,6 @@ import WebTechnologySlider from "./components/WebTechnologySlider";
 import WebFeature from "./components/WebFeature";
 import WebBenifits from "./components/WebBenifits";
 import { Pricing } from "@/components";
-
-
 
 const WebDesign = () => {
   const breadcrumbLinks = [
@@ -28,21 +25,19 @@ const WebDesign = () => {
         title="Web Development"
         description=""
         breadcrumbLinks={breadcrumbLinks}
-           heroImage="/images/hero/banner-image.avif"
+        heroImage="/images/hero/banner-image.avif"
       />
-      <WebDesignServices/>
-      <WebDevForm/>
-      <CallPage/>
-      <WebworkProcess/>
-      <WebWhyChooseUs/>
-      <Location/>
-      <WebIndustries/>
-<Pricing/>
-      <WebTechnologySlider/>
-     <WebFeature/>
-     <WebBenifits/>
-
- 
+      <WebDesignServices />
+      <WebDevForm />
+      <CallPage />
+      <WebworkProcess />
+      <WebWhyChooseUs />
+      <Location />
+      <WebIndustries />
+      <Pricing />
+      <WebTechnologySlider />
+      <WebFeature />
+      <WebBenifits />
     </div>
   );
 };

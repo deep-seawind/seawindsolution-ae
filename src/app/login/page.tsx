@@ -170,7 +170,7 @@ const LoginPage: React.FC = () => {
                     <div className="w-3 h-3 bg-[#004aad] rounded-sm" />
                   )}
                 </div>
-                <span className="text-sm text-gray-700">I'm not a robot</span>
+                <span className="text-sm text-gray-700">I&apos;m not a robot</span>
               </div>
               <RotateCw className="text-[#004aad] animate-spin-slow" />
             </div>

@@ -96,6 +96,7 @@ const WebDesignServices = () => {
                 <Image
                   src={service.image}
                   alt={service.title}
+                  fill
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-blue-900/10"></div>

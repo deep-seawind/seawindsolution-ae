@@ -111,6 +111,7 @@ export default function WebServices() {
                   <Image
                     src={movie.img}
                     alt={movie.title}
+                    fill
                     className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                   />
 

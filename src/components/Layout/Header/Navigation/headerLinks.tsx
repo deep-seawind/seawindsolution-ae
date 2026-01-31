@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { HeaderItem } from "@/type/menu";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Icon } from "@iconify/react";
 
 const servicesList = [

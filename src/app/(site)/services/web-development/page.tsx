@@ -10,11 +10,9 @@ import WebDevWhyChooseUs from "./components/WebDevWhyChooseUs";
 import WebDevTechnologySlider from "./components/WebDevTechnologySlider";
 import Location from "./components/Location";
 import WebDevFeature from "./components/WebDevFeature";
-import WebDevBenifits from "./components/WebDevBenifits";
-import WebServices from "./components/WebIndustries";
+import WebDevBenifits from "./components/WebDevBenifits"; 
 import WebIndustries from "./components/WebIndustries";
 import { Pricing } from "@/components";
-
 
 const WebDevelopment = () => {
   const breadcrumbLinks = [
@@ -29,7 +27,7 @@ const WebDevelopment = () => {
         title="Web Development"
         description=""
         breadcrumbLinks={breadcrumbLinks}
-         heroImage="/images/hero/banner-image.avif"
+        heroImage="/images/hero/banner-image.avif"
       />
       <WebDevServices />
       <WebDevForm />
@@ -37,11 +35,10 @@ const WebDevelopment = () => {
       <WebDevworkProcess />
       <WebDevWhyChooseUs />
       <Location />
-      <WebIndustries/>
-      {/* <WebDevIndustries/> */
-      }
+      <WebIndustries />
+      {/* <WebDevIndustries/> */}
       <WebDevTechnologySlider />
-<Pricing/>
+      <Pricing />
       <WebDevFeature />
       <WebDevBenifits />
     </div>

@@ -15,8 +15,7 @@ const Header: React.FC = () => {
     const [navbarOpen, setNavbarOpen] = useState(false); 
 
 
-    const mobileMenuRef = useRef<HTMLDivElement>(null);
-    const langDropdownRef = useRef<HTMLDivElement>(null);
+    const mobileMenuRef = useRef<HTMLDivElement>(null); 
 
     useEffect(() => {
         const handleScroll = () => {

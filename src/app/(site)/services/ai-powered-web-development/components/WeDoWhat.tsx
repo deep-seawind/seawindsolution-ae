@@ -153,6 +153,7 @@ const WeDoWhat = () => {
                     <Image
                       src={image.image}
                       alt={image.title}
+                      fill
                       className="w-full h-full object-cover"
                     />
 

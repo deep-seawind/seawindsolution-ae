@@ -1,8 +1,7 @@
 // import { text } from "stream/consumers";
 import {
   FaLaptopCode,
-  FaServer,
-  FaMobileAlt,
+  FaServer, 
   FaBullhorn,
 } from "react-icons/fa";
 import { MdOutlineDesignServices } from "react-icons/md";

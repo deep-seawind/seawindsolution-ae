@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Icon } from "@iconify/react";
-import { footerLinks } from "@/app/api/data";
+import { Icon } from "@iconify/react"; 
 import { MdEmail } from "react-icons/md";
 import Logo from "../Header/Logo";
 import Container from "@/components/common/Container";
@@ -26,7 +25,7 @@ const Footer = () => {
               </div>
 
               <h1 className="text-2xl font-chakrapetch font-bold mb-4">
-                Let's Build Something Great Together
+                Let&apos;s Build Something Great Together
               </h1>
               <p className="text-gray-300 text-sm leading-relaxed mb-6">
                 We are a leading technology company providing innovative
@@ -303,7 +302,7 @@ const Footer = () => {
                 Stay Updated
               </h3>
               <p className="text-gray-300 text-sm">
-                Reach out to our team and we'll get back to you within a day.
+                Reach out to our team and we&apos;ll get back to you within a day.
               </p>
             </div>
             <div>
@@ -331,11 +330,14 @@ const Footer = () => {
               © 2025 All rights reserved. Website Designed & Developed by
               <span className="flex items-center gap-2 font-medium text-white">
                 Seawind Solution FZ-LLC
-                <img
-                  src="/images/logo/favicon.ico"
-                  alt="Seawind Solution logo"
-                  className="h-5 w-auto animate-spin"
-                />
+               <Image
+              src="/images/logo/favicon.ico"
+              alt="Seawind Solution logo"
+              width={20}
+              height={20}
+              className="animate-spin"
+            />
+
               </span>
             </p>
 
